@@ -1,0 +1,328 @@
+body {
+    @include lato-reg();
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a, button, input, textarea {
+    outline: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    @include transition();
+}
+
+.font700 {font-weight: 700;}
+.height-100vh {height: 100vh;}
+.white {color: $white;}
+.bg-gray {background-color: $verylightgray;}
+.px-7 {padding: 0 8.4rem;}
+.px-8px {padding: 0 8px}
+.mx-min8 {margin: 0 -8px;}
+.overflow-hidden {overflow: hidden;}
+
+.btn-lightblue {
+    @include btn-link($bluelight);
+    @include ssp-semi(14px, $white);
+    border: 1px solid $bluelight;
+
+    &:hover {
+        background-color: $darkgray;
+        color: $white;
+        border-color: $white;
+    }
+}
+
+.btn-follow {
+    @include btn-link($darkgray);
+    @include ssp-semi(14px, $white);
+    border: 1px solid $darkgray;
+
+    &:hover {
+        background-color: $bluelight;
+        color: $white;
+        border-color: $white;
+    }
+}
+
+.main-logo {
+    @include ssp-semi(21px, $white);
+    letter-spacing: 7px;
+    
+    .fa {
+        color: $bluelight;
+    }
+}
+
+.section-top {
+    color : $white;
+    .main-header {
+        top: 0;
+        left: 0;
+
+        .main-menu {
+            margin: {
+                left: -15px;
+                right: -15px;
+            }
+
+            a {
+                padding: 8px 15px;
+                @include ssp-semi(14px, $semilightgray);
+                letter-spacing: 1.1px;
+
+                &.active {
+                    span {
+                        border: 2px solid $white;
+                        padding: 8px 15px;
+                    }
+                }
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .bg-header {
+        background-image: url('../images/bg-header.jpg');
+        @include bg-cover;
+    }
+
+    .to-bot-arrow {
+        bottom: 20px;
+        cursor: pointer;
+
+        .fa {
+            font-size: 40px;
+        }
+    }
+}
+
+.des-in-bg {
+    max-width: 450px;
+    .big-title {
+        letter-spacing: 7px;
+        line-height: 88px;
+        margin: 0;
+        @include ssp-semi(80px, $verylightgray);
+
+        &.verylightgray {
+            color: $verylightgray
+        }
+
+        &.darkgray {
+            color: $darkgray
+        }
+    }
+}
+
+.section-body {
+    padding: 60px 0;
+
+    .box-des {
+        margin: 50px 0 60px;
+    }
+}
+
+.section-carousel {
+    margin: calc(550px - 420px) 0;
+    .box-carousel {
+        top: -63px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .bg-carousel {
+            border-radius: 10px;
+            width: calc(100% - 14rem);
+            height: 550px;
+            background-color: $bluelight;
+        }
+    }
+
+    .carousel-slider {
+        .item {
+            img {
+                width: 100%;
+                height: 420px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .tns-outer {
+        position: relative;
+    }
+
+    .tns-controls, .tns-outer [data-action] {
+        display: none;
+    }
+
+    .tns-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        button {
+            background-color: $bluesky;
+            border-radius: 100%;
+            border: 1px solid $bluesky;
+            margin: 0 5px;
+            padding: 4px;
+            width: 10px;
+            height: 10px;
+
+            &.tns-nav-active {
+                padding: 5px;
+            }
+        }
+    }
+}
+
+.big-box {
+    padding: 95px 0;
+    &.bluelight {
+        background-color: $bluelight;
+        .socmed-content {color: $white;}
+    }
+
+    .socmed-content {
+        .icon {
+            font-size: 25px;
+            line-height: 0;
+        }
+
+        .des {
+            max-width: 500px;
+            p {
+                font-size: 25px;
+                margin: 15px 0 25px;
+            }
+        }
+    }
+}
+
+.section-blog {
+    margin-top: 120px;
+
+    .overlay {
+        top: 0;
+        right: 0;
+        left: 0px;
+        bottom: 0px;
+        background: rgba(0,0,0,0.5);
+        @include transition();
+    }
+
+    a {
+        @include transition();
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            @include transition();
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+
+            .overlay {
+                opacity: 0;
+            }
+        }
+    }
+
+    .small-font-bold{
+        margin-top: 10px;
+        @include  ssp-semi(13px, $black);
+    }
+
+    .head-title  {
+        a {
+            @include  ssp-semi(25px, $black);
+            margin-bottom: 30px;
+        }
+    }
+
+    .des {
+        line-height: 25px;
+    }
+}
+
+.footer {
+    background-color: $black;
+    padding: 90px 0;
+    color: $semilightgray;
+    font-size: 14px;
+    line-height: 24px;
+
+    .overview {max-width: 80%;}
+
+    .top {
+
+        .footer-menu {
+            max-width: 90%;
+            margin-left: auto;
+            .title {
+                @include ssp-semi(25px, $verylightgray);
+                letter-spacing: 3px;
+            }
+
+            ul {
+                li {
+                    a {
+                        color: $semilightgray;
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom {
+        margin-top: 40px;
+
+        form {
+            max-width: 90%;
+            margin-left: auto;
+            .newsletter {
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid $lightgray;
+                padding: 12px 0;
+                height: 49px;
+                border-radius: 0;
+                color: $verylightgray
+            }
+        }
+
+        .icon-input {
+            font-size: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 1px;
+            background: transparent;
+            color: $white;
+            height: 49px;
+            width: 10%;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+    }
+}
+
